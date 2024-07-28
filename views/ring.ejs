@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<main>
+    <header><a href="<%- meta.home %>" target="_top"><%= meta.name %></a></header>
+    <nav>
+        <a href="<%= previousSite.url %>" target="_top">Previous</a>
+        <a href="<%= randomSite.url %>" target="_top">Random</a>
+        <a href="<%= nextSite.url %>" target="_top">Next</a>
+    </nav>
+</main>

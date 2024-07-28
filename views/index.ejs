@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= meta.name %></title>
+        <meta name="description" content="<%- meta.summary %>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/main.css">
+    </head>
+    <body>
+        <main>
+            <h1><%= meta.name %></h1>
+            <p><%- meta.description %></p>
+            <p>To join this webring, <a href="<%- meta.contact %>">get in touch</a>.</p>
+            <details>
+                <summary>Ring embed</summary>
+                <p>Copy and paste the following HTML snippet into your website:</p>
+<pre><code>&lt;iframe 
+    credentialless
+    sandbox="allow-top-navigation-by-user-activation"
+    src="<%= meta.home %>/ring?username=YOUR_USERNAME_HERE"
+&gt;
+    Your browser does not support iframes :(
+&lt;/iframe&gt;</code></pre>
+                <p>This embeds the webring while</p>
+                <ol>
+                    <li>not transferring credentials (cookies, etc) to the ring,</li>
+                    <li>allowing users to open links from the webring,</li>
+                    <li>and showing a helpful message to anyone who has iframes disabled :)</li>
+                </ol>
+            </details>
+            <h2>Members</h2>
+            <ul>
+                <% for (const site of sites) { %>
+                    <li><a href="<%- site.url %>"><%- site.username %> (<%- site.url %>)</a></li>
+                <% } %>
+            </ul>
+            <footer>
+                <p>Powered by <a href="https://github.com/auctumnus/anneau">anneau</a>.</p>
+            </footer>
+        </main>
+    </body>
+</html>
+
